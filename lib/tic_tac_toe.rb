@@ -37,7 +37,11 @@ def turn(board)
   input = gets.strip
   index = input_to_index(input)
     if valid_move?(board, index)
+<<<<<<< HEAD
       move(board, index, current_player(board))
+=======
+      move(board, index, token = "X")
+>>>>>>> 93382c4435cbbd2c54b604429dc805ddd57ddc15
       display_board(board)
     else
       turn(board)
@@ -82,7 +86,13 @@ end
 def draw?(board)
   if full?(board) && !won?(board)
     return true
+<<<<<<< HEAD
   else
+=======
+  elsif !full?(board) && won?(board)
+    return false
+  else won?(board) && full?(board)
+>>>>>>> 93382c4435cbbd2c54b604429dc805ddd57ddc15
     return false
   end
 end
@@ -103,9 +113,15 @@ def play(board)
     turn(board)
   end
   if won?(board)
+<<<<<<< HEAD
 
     puts "Congratulations #{winner(board)}!"
   elsif draw?(board)
     puts "Cat's Game!"
+=======
+    "congratulate"
+  elsif draw?(board)
+    "draw"
+>>>>>>> 93382c4435cbbd2c54b604429dc805ddd57ddc15
   end
 end
